@@ -8,13 +8,12 @@
     model-viewer {
       width: 100%;
       height: 500px;
-      background-color: #fff; /* Fondo blanco */
-
+      background-color: #f00; /* Fondo rojo */
     }
   </style>
 </head>
 <body>
-  <model-viewer id="modelo" src="cubo.glb" alt="Modelo 3D"
+  <model-viewer id="modelo" src="parallelepide_rectangle.glb" alt="Modelo 3D"
                 auto-rotate camera-controls shadow-intensity="1" style="width: 100%; height: 500px;">
   </model-viewer>
 
@@ -24,8 +23,7 @@
       modelo.addEventListener('load', () => {
         const material = modelo.model.materials[0]; // Accede al primer material
         if (material) {
-           material.pbrMetallicRoughness.setBaseColorFactor([0.0, 0.0, 1.0, 1.0]);
-
+          material.pbrMetallicRoughness.setBaseColorFactor([0.0, 0.0, 1.0, 1.0]);
         }
       });
     });
